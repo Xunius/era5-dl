@@ -1,0 +1,35 @@
+import cdsapi
+
+c = cdsapi.Client()
+
+c.retrieve(
+    'reanalysis-era5-pressure-levels',
+    {
+        'product_type': 'reanalysis',
+        'format': 'netcdf',
+        'variable': [
+            'geopotential', 'specific_humidity',
+        ],
+        'pressure_level': [
+            '300', '500', '700',
+        ],
+        'year': [
+            '1991', '1992',
+        ],
+        'month': [
+            '01', '02', '03',
+        ],
+        'day': [
+            '01', '02', '03',
+            '04', '05', '06',
+        ],
+        'time': [
+            '00:00', '06:00', '12:00',
+            '18:00',
+        ],
+        'area': [
+            10, 80, -10,
+            100,
+        ],
+    },
+    'download.nc')
