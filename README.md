@@ -21,7 +21,7 @@ pip install era5dl
 ### 1. Batch download
 
 Send batch download jobs to retrieve large amount of data while saving
-the downloaded data into separate files, e.g. each for year.
+the downloaded data into separate files, e.g. each for a year.
 
 E.g. to download u-wind and geo-potential during 2000-2001, on pressure levels
 1000 and 800 hPa, while
