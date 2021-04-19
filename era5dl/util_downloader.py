@@ -43,6 +43,11 @@ LOG_CONFIG = {
     }
 }
 
+__all__=[
+        'retrieveData', 'getLogger', 'skipJobs', 'loadDownloadedList',
+        'prepareJobDict', 'prepareBatchJobDicts', 'processJob',
+        'processJobs', 'batchDownload', 'batchDownloadFromWebRequest'
+        ]
 
 
 def retrieveData(data_target, job_dict, abpath_out, dry=True):

@@ -9,7 +9,7 @@ import os
 import glob
 import csv
 
-TABLE_FOLDER=os.path.abspath(os.path.join(os.path.abspath(__file__), '../../docs/'))
+TABLE_FOLDER=os.path.abspath(os.path.join(os.path.abspath(__file__), '../tables/'))
 
 
 def readTable(abpath_in, verbose=True):

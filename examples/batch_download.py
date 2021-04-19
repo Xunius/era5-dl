@@ -75,4 +75,4 @@ TEMPLATE_DICT = {
 
 if __name__ == '__main__':
 
-    batchDownload(TEMPLATE_DICT, JOB_DICT, SKIP_LIST, OUTPUTDIR, dry=True, pause=3)
+    batchDownload(TEMPLATE_DICT, JOB_DICT, SKIP_LIST, OUTPUTDIR, dry=False, pause=3)

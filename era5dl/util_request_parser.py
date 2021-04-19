@@ -11,7 +11,10 @@ import copy
 from pprint import pprint
 from .util_general import getAttrProduct
 
-
+__all__=[
+        'DATA_TARGET_PATTERN', 'DICT_PATTERN', 'DICT_KEY_VALUE_PATTERN',
+        'parseJobDict', 'splitBy', 'parseFile', 'parseString'
+        ]
 
 #------------api request parsing regex------------
 DATA_TARGET_PATTERN=re.compile(r'''

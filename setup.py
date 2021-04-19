@@ -2,7 +2,7 @@ import setuptools
 
 with open('README.md', 'r') as fin:
     long_description=fin.read()
-exec(open('./version.py').read())
+exec(open('version.py').read())
 
 setuptools.setup(
         name='era5-dl',
@@ -30,6 +30,6 @@ setuptools.setup(
             'cdsapi',
             ],
         python_requires='>=3',
-        package_data={'tests': ['*'], 'examples': ['*']},
+        package_data={'examples': ['*'], 'era5dl': ['tables/*.csv']},
         )
 
