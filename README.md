@@ -13,7 +13,7 @@
 Install via `pip`:
 
 ```
-pip install era5-dl
+pip install era5dl
 ```
 
 ## Features and usages

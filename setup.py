@@ -5,7 +5,7 @@ with open('README.md', 'r') as fin:
 exec(open('version.py').read())
 
 setuptools.setup(
-        name='era5-dl',
+        name='era5dl',
         version=__version__,
         author='Guangzhi XU',
         author_email='xugzhi1987@gmail.com',
