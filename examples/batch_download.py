@@ -6,7 +6,7 @@ Update time: 2021-04-07 15:10:42.
 '''
 
 from __future__ import print_function
-from lib.util_downloader import batchDownload
+from era5dl import batchDownload
 
 
 # -----------------------Jobs-----------------------

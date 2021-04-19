@@ -6,7 +6,7 @@ Update time: 2021-04-08 10:10:34.
 '''
 
 from __future__ import print_function
-from lib.util_downloader import batchDownloadFromWebRequest
+from era5dl import batchDownloadFromWebRequest
 
 #--------------Globals------------------------------------------
 API_FILE='./examples/test_api1.txt'

@@ -8,7 +8,7 @@ Update time: 2021-04-07 11:33:10.
 '''
 
 import os
-from lib import util_downloader
+from era5dl import prepareJobDict, retrieveData
 
 # -----------------Data to retrieve-----------------
 DRY = False
@@ -32,9 +32,9 @@ OUTPUTDIR = './'
 
 if __name__ == '__main__':
 
-    job_dict, data_target = util_downloader.prepareJobDict(
+    job_dict, data_target = prepareJobDict(
         VARS, YEARS, MONTHS, DAYS, HOURS, TIME_STEP, LEVEL_TYPE, LEVELS,
         area=AREA, out_format=FORMAT)
     fileout_name = 'era5_download.%s' % 'era5.nc' if FORMAT == 'netcdf' else 'era5.grb'
     abpath_out = os.path.join(OUTPUTDIR, fileout_name)
-    util_downloader.retrieveData(data_target, job_dict, abpath_out, dry=DRY)
+    retrieveData(data_target, job_dict, abpath_out, dry=DRY)
