@@ -30,6 +30,6 @@ setuptools.setup(
             'cdsapi',
             ],
         python_requires='>=3',
-        package_data={'examples': ['*'], 'era5dl': ['tables/*.csv']},
+        package_data={'era5dl': ['tables/*.csv', 'examples/*']},
         )
 

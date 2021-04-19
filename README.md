@@ -8,10 +8,17 @@
   https://confluence.ecmwf.int/display/CKB/How+to+download+ERA5 for more
   details.
 
+## Install
+
+Install via `pip`:
+
+```
+pip install era5-dl
+```
 
 ## Features and usages
 
-### Batch download
+### 1. Batch download
 
 Send batch download jobs to retrieve large amount of data while saving
 the downloaded data into separate files, e.g. each for year.
@@ -38,11 +45,11 @@ SKIP_LIST = [
 batchDownload(TEMPLATE_DICT, JOB_DICT, SKIP_LIST, OUTPUTDIR, dry=True, pause=3)
 ```
 
-### Keep a log
+### 2. Keep a log
 
 A log file is created in the same folder where the downloaded data are saved.
 
-E.g.
+Example log:
 
 ```
 <util_downloader.py-processJob()>: 2021-04-17 20:20:38,289,INFO: <batch_download>: Output folder at: ./
@@ -58,7 +65,7 @@ E.g.
 ...
 ```
 
-### Skip already downloaded files
+### 3. Skip already downloaded files
 
 When running a batch downloading job, each finished job is recorded in a text file
 named `downloaded_list.txt` in the same folder as the saved data.
@@ -67,7 +74,7 @@ of the script will first look at the `downloaded_list.txt` file
 and exclude those already finished retrievals.
 
 
-### Create a batch download job by splitting the api request from ECMWF web
+### 4. Create a batch download job by splitting the api request from ECMWF web
 
 E.g.
 
@@ -107,16 +114,17 @@ is saved into a separate file.
 Again, already downloaded data are recorded in the `downloaded_list.txt` file
 and re-executing the script will not re-download them.
 
-### Automatically generate meaningful file names
+### 5. Automatically generate meaningful file names
 
 The `batchDownload()` and `batchDownloadFromWebRequest()` functions accept
-a `naming_func` keyword argument, which can be None, or a callable.
+a `naming_func` keyword argument, which can be `None`, or a callable.
+
 If a callable, it should be a function that accepts
 a single input argument which is a dict defining
 the data retrieval task, and returns a string as the filename
-(without folder path) to name the downloaded data. If None,
-it will
-construct a default filename, using the following format:
+(without folder path) to name the downloaded data.
+
+If `None`, it will construct a default filename, using the following format:
 
 `[ID<n>]<attributes>.nc` or `[ID<n>]<attributes>.grb`.
 
@@ -128,7 +136,7 @@ E.g.
 [ID02]700-geopotential-2000.nc
 ```
 
-### Dry run
+### 6. Dry run
 
 The `batchDownload()` and `batchDownloadFromWebRequest()` functions accept
 a `dry` positional argument. When set to `True`, will simulate the retrieval

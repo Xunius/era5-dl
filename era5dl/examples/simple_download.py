@@ -11,7 +11,7 @@ import os
 from era5dl import prepareJobDict, retrieveData
 
 # -----------------Data to retrieve-----------------
-DRY = False
+DRY = True
 VARS = ['u_component_of_wind', 'geopotential']
 YEARS = range(1979, 1981)
 MONTHS = [1, 2]
