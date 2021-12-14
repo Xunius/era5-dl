@@ -271,10 +271,9 @@ def prepareJobDict(var_list, years, months, days, hours, time_step, level_type,
 
     for vv in var_list:
         if level_type == 's':
-            valid_names = [
-                dd['Variable name in CDS']
-                for dd in util_read_param_table.getSurfaceTables(
-                    varname_tables)]
+            valid_names = []
+            for dd in util_read_param_table.getSurfaceTables(varname_tables):
+                valid_names.extend(dd['Variable name in CDS'])
         elif level_type == 'p':
             valid_names = varname_tables['table9']['Variable name in CDS']
 
